@@ -8,7 +8,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    post = Post.create(content: params[:content], checked: false)
+    render json:{ post: post }
   end
 
 
